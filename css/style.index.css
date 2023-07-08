@@ -38,6 +38,9 @@
   margin: 15px 20px;
 }
 
+.en_cours {
+  color: rgb(255, 0, 0); text-align: center;
+}
 @media screen and (max-width: 926px) {
   .art-pres {
     margin: 20px 5px;

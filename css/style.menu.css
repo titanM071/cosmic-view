@@ -42,6 +42,11 @@ nav {
   color: white;
 }
 
+.profil{
+  width: 50px;
+  height: auto;
+}
+
 .navbar .logo {
   font-size: 2em;
   font-weight: blob;
@@ -53,6 +58,8 @@ nav {
 
 .navbar .nav-links ul li {
   margin: 0 25px;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .navbar .nav-links ul li.active a {
@@ -68,11 +75,32 @@ nav {
   width: 35px;
 }
 
+/* personalisation de <details> et <summary> */
+summary {
+  cursor: pointer;
+}
+
+details[open] summary::before {
+  content: "-";
+}
+
+details summary::before {
+  content: "+";
+}
+
+details[open] > *:not(summary) {
+  display: block;
+}
+
+details > *:not(summary) {
+  display: none;
+}
+
 @media screen and (max-width: 926px) {
   .none-mobile {
     display: none;
   }
-  
+
   .navbar {
     padding: 0;
     position: inherit;
@@ -93,7 +121,6 @@ nav {
     left: 0;
     position: absolute;
     background-color: rgba(27, 27, 27, 0.719);
-    backdrop-filter: blur(8px);
     width: 100%;
     height: 100vh;
     display: flex;
@@ -101,11 +128,11 @@ nav {
     justify-content: center;
     align-items: center;
     margin-left: 100%;
-    transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -ms-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
   }
 
   .mobile-menu {
